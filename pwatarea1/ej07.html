@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 7 - Diseño de Navegación</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fce4ec; /* rosa pastel */
+    }
+
+    /* Estilos de la barra de navegación */
+    nav {
+      background-color: #4a6fa5; /* azul mate */
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      background-color: #f06292; /* rosa más fuerte */
+    }
+
+    nav a.active {
+      background-color: #f48fb1; /* rosa pastel cuando se hace clic */
+    }
+
+    /* Estilos de las secciones */
+    section {
+      padding: 40px;
+      margin-top: 20px;
+    }
+
+    h1 {
+      color: #4a6fa5; /* azul mate */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav>
+    <a href="#sobre-mi" class="active">Sobre mí</a>
+    <a href="#biografia">Biografía</a>
+    <a href="#slider">Slider</a>
+    <a href="https://www.youtube.com" target="_blank">YouTube</a>
+    <a href="https://www.pinterest.com" target="_blank">Pinterest</a>
+    <a href="https://www.pexels.com" target="_blank">Pexels</a>
+  </nav>
+
+  <!-- Secciones -->
+  <section id="sobre-mi">
+    <h1>Sobre mí</h1>
+    <p>¡Hola! Soy Vanessa, una apasionada de la fotografía, la repostería y la programación...</p>
+  </section>
+
+  <section id="biografia">
+    <h1>Mi Biografía</h1>
+    <p>Mi historia comienza con un amor por la tecnología y el arte visual...</p>
+  </section>
+
+  <section id="slider">
+    <h1>Slider de Imágenes</h1>
+    <div class="caja">
+      <div class="slider">
+        <img src="img/foto1.jpg" alt="Foto 1">
+        <img src="img/foto2.jpg" alt="Foto 2">
+        <img src="img/foto3.jpg" alt="Foto 3">
+      </div>
+      <div class="texto">Cajita</div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    // Cambiar clase activa en la navegación
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    // Slider JavaScript
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slider img');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    function showSlide(index) {
+      const totalSlides = images.length;
+      if (index >= totalSlides) {
+        currentIndex = 0;
+      } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+      } else {
+        currentIndex = index;
+      }
+      document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => showSlide(currentIndex - 1));
+    nextButton.addEventListener('click', () => showSlide(currentIndex + 1));
+
+    setInterval(() => showSlide(currentIndex + 1), 3000); // Cambia de imagen automáticamente cada 3 segundos
+  </script>
+
+</body>
+</html>

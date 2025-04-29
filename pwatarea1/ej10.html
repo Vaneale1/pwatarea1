@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vanessa - Biografía</title>
+  <style>
+    :root {
+      --verde-pastel: #dcedc8;
+      --negro: #000000;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/purty-wood.png'), var(--verde-pastel);
+      background-repeat: repeat;
+      background-size: cover;
+      color: var(--negro);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--negro);
+      color: var(--verde-pastel);
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    main {
+      flex: 3;
+      padding: 20px;
+      background-color: var(--blanco);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-right: 20px;
+    }
+
+    aside {
+      flex: 1;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      border-left: 5px solid var(--negro);
+      padding-left: 10px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background-color: var(--negro);
+      color: var(--verde-pastel);
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .boton {
+      background-color: var(--negro);
+      color: var(--verde-pastel);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .boton:hover {
+      background-color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+      .contenedor {
+        flex-direction: column;
+        margin: 10px;
+      }
+
+      main {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Vanessa - Mi Biografía</h1>
+  </header>
+
+  <div class="contenedor">
+    <main>
+      <section>
+        <h2>Sobre mí</h2>
+        <p>¡Hola! Soy Vanessa Salazar tengo 22 años y vivo en Ecuador, soy una apasionada por el contenido digital 3D. Estudio Ingeniería en Sistemas Inteligentes y me encanta aprender y crear diseños 3D y Web.</p>
+      </section>
+
+      <section>
+        <h2>Formación</h2>
+        <p>Actualmente estudio en la universidad UBE y me enfoco en mejorar constantemente mis habilidades tanto técnicas como creativas.</p>
+      </section>
+
+      <section>
+        <h2>Proyectos</h2>
+        <ul>
+          <li>🎞️Edición 3D en BLENDER</li>
+          <li>📷Fotografía artística y profesional</li>
+          <li>✨Diseño Web de Portafolio Digital</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside>
+      <h2>Pasatiempos</h2>
+      <ul>
+        <li>Fotografía</li>
+        <li>Diseño digital</li>
+        <li>Repostería</li>
+        <li>Programación creativa</li>
+      </ul>
+      <br />
+      <a class="boton" href="https://web.whatsapp.com/" target="_blank">Contáctame</a>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Vanessa | Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
